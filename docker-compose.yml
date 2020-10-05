@@ -15,7 +15,8 @@ services:
       - 3306:3306
     restart: unless-stopped
     volumes:
-      - ./mysql/schema/sample.sql:/docker-entrypoint-initdb.d/sample.sql
+      - ./mysql/schema:/docker-entrypoint-initdb.d
+      - ./mysql/mock_data.sql:/tmp/mock_data.sql
   phpmyadmin:
     depends_on:
       - mysql
