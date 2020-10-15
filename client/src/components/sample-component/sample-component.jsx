@@ -8,7 +8,7 @@ export class SampleComponent extends Component {
   };
 
   componentDidMount() {
-    this.callServer('sample')
+    this.callServer('friends')
   }
 
   callServer(table) {
@@ -25,8 +25,8 @@ export class SampleComponent extends Component {
   render() {
     return (
       <div>
-        This is a sample response from the database:
-        <p>{this.state.sampleResponse[0].name}</p>
+        This is a sample response from the friends database:
+        <p>{this.state.sampleResponse[0].first_name}</p>
       </div>
     );
   }

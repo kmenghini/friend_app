@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from 'react-router-dom';
 
-import logo from '../images/logo.svg';
-import { SampleComponent } from '../components';
+import {
+  LeftHandNav,
+  RemindersPage,
+  FriendsPage
+} from '../components';
 
 import './app.css';
 
@@ -43,34 +51,19 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
-          <p>
-            <strong>Post to Server:</strong>
-          </p>
-          <input
-            type="text"
-            value={this.state.post}
-            onChange={e => this.setState({ post: e.target.value })}
-          />
-          <button type="submit">Submit</button>
-        </form>
-        <p>{this.state.responseToPost}</p>
-        <SampleComponent />
+            <Router>
+                  <LeftHandNav />
+
+                  <Switch>
+                      <Route path="/friends">
+                          <FriendsPage />
+                      </Route>
+                      <Route path="/">
+                          <RemindersPage />
+                      </Route>
+                  </Switch>
+
+            </Router>
       </div>
     );
   }

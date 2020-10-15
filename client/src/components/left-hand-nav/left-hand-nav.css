@@ -1,0 +1,5 @@
+.left-hand-nav {
+    background-color: #cc79a7;
+    display: flex;
+    flex-direction: column;
+}
