@@ -1,7 +1,33 @@
 .left-hand-nav-item {
-    height: 100px;
-    border: 2px solid black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    min-width: 150px;
+}
+
+.left-hand-nav-item a {
+    width: 100%;
+    height: 100%;
     display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.left-hand-nav-item a svg {
+    margin-right: 7px;
+    margin-left: 15px;
+}
+
+.left-hand-nav-item text {
     justify-content: center;
-    align-items: center; 
+}
+
+.left-hand-nav-item a:link, .left-hand-nav-item a:visited {
+    color: white;
+    text-decoration: none;
+}
+
+.left-hand-nav-item a:hover, .left-hand-nav-item a:active {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }

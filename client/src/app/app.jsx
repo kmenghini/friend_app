@@ -8,7 +8,8 @@ import {
 import {
   LeftHandNav,
   RemindersPage,
-  FriendsPage
+  FriendsPage,
+  MessagesPage,
 } from '../components';
 
 import './app.css';
@@ -57,6 +58,9 @@ class App extends Component {
                   <Switch>
                       <Route path="/friends">
                           <FriendsPage />
+                      </Route>
+                      <Route path="/messages">
+                          <MessagesPage />
                       </Route>
                       <Route path="/">
                           <RemindersPage />
