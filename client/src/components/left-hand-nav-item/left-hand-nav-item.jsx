@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav'
+import { NavLink } from 'react-router-dom';
 
 import './left-hand-nav-item.css';
 
@@ -8,13 +8,24 @@ import './left-hand-nav-item.css';
 export class LeftHandNavItem extends Component {
 
     render() {
+        let {
+            item: {
+                link,
+                name
+            },
+            children: icon,
+            isActive,
+            onClick,
+        } = this.props
+
+        const navItemClasses = `left-hand-nav-item ${isActive ? "is-active" : ""}`
 
         return (
-            <Nav.Item className="left-hand-nav-item">
-                <Link to={this.props.link}>
-                    {this.props.children}
-                    <text>{this.props.name}</text>
-                </Link> 
+            <Nav.Item className={navItemClasses} onClick={onClick}>
+                <NavLink to={link} className="left-hand-nav-item-link">
+                    {icon}
+                    <span>{name}</span>
+                </NavLink>
             </Nav.Item>
         )
     }
